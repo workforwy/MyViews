@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/etText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:hint="内容"
+        />
+    
+    <EditText
+        android:id="@+id/etSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="30" 
+        android:hint="文字大小"
+        android:inputType="number"
+        android:singleLine="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="ok"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:text="确定" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="cancel"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:text="取消" />
+    </LinearLayout>
+
+</LinearLayout>
