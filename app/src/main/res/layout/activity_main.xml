@@ -4,9 +4,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.trkj.lizanhong.chapter3.ClipView
+    <com.example.myviews.ClipView
         android:id="@+id/clipview"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <com.example.myviews.BallMoveView
+        android:id="@+id/ball"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <com.example.myviews.CoordinateView
+        android:id="@+id/coord"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <com.example.myviews.WatchView
+        android:id="@+id/watch"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>

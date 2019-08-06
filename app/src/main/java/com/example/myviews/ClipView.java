@@ -12,7 +12,9 @@ import android.view.View;
  * Created by lizanhong on 16/1/21.
  */
 public class ClipView extends View {
-    /**显示第i张小图片*/
+    /**
+     * 显示第i张小图片
+     */
     private int i = 0;
     private Bitmap bmpBoom;
 
@@ -35,7 +37,8 @@ public class ClipView extends View {
         canvas.clipRect(rect);//设置剪切区
         canvas.drawBitmap(bmpBoom, -i * shortWidth, 0, null);//画1/7张图
         canvas.restore();
-        i ++;
-        if(i == 7) i = 0;//重新播放
+        i++;
+        if (i == 7)
+            i = 0;//重新播放
     }
 }
