@@ -1,0 +1,102 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/redo"
+        android:title="撤消"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/line"
+        android:title="线"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/rect"
+        android:title="矩形"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/circle"
+        android:title="圆"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/oval"
+        android:title="椭圆"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/text"
+        android:title="文字"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/gif"
+        android:title="gif"
+        app:showAsAction="never" />
+    <item android:title="设置">
+        <menu>
+            <item android:title="颜色">
+                <menu>
+                    <group>
+                        <item
+                            android:id="@+id/black"
+                            android:title="黑色"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/red"
+                            android:title="红色"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/green"
+                            android:title="绿色"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/yellow"
+                            android:title="黄色"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/blue"
+                            android:title="蓝色"
+                            app:showAsAction="never" />
+                    </group>
+                </menu>
+            </item>
+            <item android:title="线条粗细">
+                <menu>
+                    <group>
+                        <item
+                            android:id="@+id/b1"
+                            android:title="1"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/b2"
+                            android:title="2"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/b3"
+                            android:title="3"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/b4"
+                            android:title="4"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/b5"
+                            android:title="5"
+                            app:showAsAction="never" />
+                    </group>
+                </menu>
+            </item>
+            <item android:title="图形类型">
+                <menu>
+                    <group>
+                        <item
+                            android:id="@+id/fill"
+                            android:title="填充"
+                            app:showAsAction="never" />
+                        <item
+                            android:id="@+id/stroke"
+                            android:title="线条"
+                            app:showAsAction="never" />
+                    </group>
+                </menu>
+            </item>
+        </menu>
+    </item>
+
+</menu>
