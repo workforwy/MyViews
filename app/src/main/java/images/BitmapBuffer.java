@@ -5,75 +5,75 @@ import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 
 /**
- * Î»Í¼»º³åÇø
- * @author èºî£¿Æ¼¼£ºÀîÔŞºì
+ * ä½å›¾ç¼“å†²åŒº
+ * @author éŸ¬ç¿ç§‘æŠ€ï¼šæèµçº¢
  *
  */
 public class BitmapBuffer {
-	private Bitmap bitmap;
-	private Canvas canvas;
-	private static BitmapBuffer self;
-	
-	private BitmapBuffer(int width, int height) {
-		init(width, height);
-	}
-	
-	private void init(int width, int height){
-		bitmap = Bitmap.createBitmap(width, height, Config.ARGB_8888);
-		canvas = new Canvas();
-		canvas.setBitmap(bitmap);
-	}
-	
-	public static BitmapBuffer getInstance(){
-		if(self == null){
-			self = new BitmapBuffer(SystemParams.areaWidth,
-					SystemParams.areaHeight);
-		}
-		return self;
-	}
-	
-	/**
-	 * »ñÈ¡»º³åÇøµÄ»­²¼
-	 * @return
-	 */
-	public Canvas getCanvas(){
-		return canvas;
-	}
-	
-	/**
-	 * »ñµÃ»æÍ¼½á¹û
-	 * @return
-	 */
-	public Bitmap getBitmap(){
-		return bitmap;
-	}
-	
-	/**
-	 * ½«µ±Ç°µÄ»æÍ¼½á¹û±£´æµ½Õ»ÖĞ
-	 */
-	public void pushBitmap(){
-		BitmapHistory.getInstance().pushBitmap(
-				bitmap.copy(Config.ARGB_8888, false));
-	}
-	
-	/**
-	 * ³·Ïû
-	 */
-	public void redo(){
-		BitmapHistory his = BitmapHistory.getInstance();
-		if(his.isReDo()){
-			Bitmap bmp = his.reDo();
-			if(bmp != null){
-				bitmap = bmp.copy(Config.ARGB_8888, true);
-				//±ØĞëÖØĞÂ¹ØÁª»­²¼
-				canvas.setBitmap(bitmap);
-				//»ØÊÕ
-				if(bmp!= null && !bmp.isRecycled()){
-					bmp.recycle();
-					System.gc();
-					bmp = null;
-				}
-			}
-		}
-	}
+    private Bitmap bitmap;
+    private Canvas canvas;
+    private static BitmapBuffer self;
+
+    private BitmapBuffer(int width, int height) {
+        init(width, height);
+    }
+
+    private void init(int width, int height){
+        bitmap = Bitmap.createBitmap(width, height, Config.ARGB_8888);
+        canvas = new Canvas();
+        canvas.setBitmap(bitmap);
+    }
+
+    public static BitmapBuffer getInstance(){
+        if(self == null){
+            self = new BitmapBuffer(SystemParams.areaWidth,
+                    SystemParams.areaHeight);
+        }
+        return self;
+    }
+
+    /**
+     * è·å–ç¼“å†²åŒºçš„ç”»å¸ƒ
+     * @return
+     */
+    public Canvas getCanvas(){
+        return canvas;
+    }
+
+    /**
+     * è·å¾—ç»˜å›¾ç»“æœ
+     * @return
+     */
+    public Bitmap getBitmap(){
+        return bitmap;
+    }
+
+    /**
+     * å°†å½“å‰çš„ç»˜å›¾ç»“æœä¿å­˜åˆ°æ ˆä¸­
+     */
+    public void pushBitmap(){
+        BitmapHistory.getInstance().pushBitmap(
+                bitmap.copy(Config.ARGB_8888, false));
+    }
+
+    /**
+     * æ’¤æ¶ˆ
+     */
+    public void redo(){
+        BitmapHistory his = BitmapHistory.getInstance();
+        if(his.isReDo()){
+            Bitmap bmp = his.reDo();
+            if(bmp != null){
+                bitmap = bmp.copy(Config.ARGB_8888, true);
+                //å¿…é¡»é‡æ–°å…³è”ç”»å¸ƒ
+                canvas.setBitmap(bitmap);
+                //å›æ”¶
+                if(bmp!= null && !bmp.isRecycled()){
+                    bmp.recycle();
+                    System.gc();
+                    bmp = null;
+                }
+            }
+        }
+    }
 }

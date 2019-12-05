@@ -8,46 +8,46 @@ import android.view.View;
 import images.BitmapBuffer;
 
 /**
- * Í¼ĞÎ»æÖÆÆ÷
- * 
- * @author èºî£¿Æ¼¼£ºÀîÔŞºì
- * 
+ * å›¾å½¢ç»˜åˆ¶å™¨
+ *
+ * @author éŸ¬ç¿ç§‘æŠ€ï¼šæèµçº¢
+ *
  */
 public abstract class ShapeDrawer {
-	private View view;
-	
-	public ShapeDrawer(View view) {
-		super();
-		this.view = view;
-	}
-	
-	public View getView() {
-		return view;
-	}
+    private View view;
 
-	/**
-	 * ÓÃÓÚ»æÍ¼
-	 * 
-	 * @param viewCanvas
-	 *            ÓÃÓÚÕ¹Ê¾½á¹ûµÄ»­²¼
-	 * @return
-	 */
-	public void draw(Canvas viewCanvas){
-		//»­ÀúÊ·½á¹û
-		Bitmap bitmap = BitmapBuffer.getInstance().getBitmap();
-		viewCanvas.drawBitmap(bitmap, 0, 0, null);
-	}
+    public ShapeDrawer(View view) {
+        super();
+        this.view = view;
+    }
 
-	/**
-	 * ÓÃÓÚÏìÓ¦´¥ÃşÊÂ¼ş
-	 * 
-	 * @param event
-	 * @return
-	 */
-	public abstract boolean onTouchEvent(MotionEvent event);
+    public View getView() {
+        return view;
+    }
 
-	/**
-	 * »æÍ¼µÄÂß¼­
-	 */
-	public abstract void logic();
+    /**
+     * ç”¨äºç»˜å›¾
+     *
+     * @param viewCanvas
+     *            ç”¨äºå±•ç¤ºç»“æœçš„ç”»å¸ƒ
+     * @return
+     */
+    public void draw(Canvas viewCanvas){
+        //ç”»å†å²ç»“æœ
+        Bitmap bitmap = BitmapBuffer.getInstance().getBitmap();
+        viewCanvas.drawBitmap(bitmap, 0, 0, null);
+    }
+
+    /**
+     * ç”¨äºå“åº”è§¦æ‘¸äº‹ä»¶
+     *
+     * @param event
+     * @return
+     */
+    public abstract boolean onTouchEvent(MotionEvent event);
+
+    /**
+     * ç»˜å›¾çš„é€»è¾‘
+     */
+    public abstract void logic();
 }

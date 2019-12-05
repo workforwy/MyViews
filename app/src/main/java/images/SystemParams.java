@@ -1,17 +1,17 @@
 package images;
 
 /**
- * 系统参数
- * @author 韬睿科技：李赞红
+ * 绯荤粺鍙傛暟
+ * @author 闊澘绉戞妧锛氭潕璧炵孩
  *
  */
 public class SystemParams {
-	/*绘图区的宽度*/
-	public static int areaWidth;
-	
-	/*绘图区的高度*/
-	public static int areaHeight;
-	
-	/*是否撤消*/
-	public static boolean isRedo;
+    /*缁樺浘鍖虹殑瀹藉害*/
+    public static int areaWidth;
+
+    /*缁樺浘鍖虹殑楂樺害*/
+    public static int areaHeight;
+
+    /*鏄惁鎾ゆ秷*/
+    public static boolean isRedo;
 }

@@ -10,13 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import images.AttributesTool;
 import images.BitmapBuffer;
-import images.drawer.ImageView;
+import images.ShapeDrawer;
 import images.SystemParams;
-import images.drawer.CircleDrawer;
+import images.drawer.CircleView;
+import images.drawer.ImageView;
 import images.drawer.LineDrawer;
 import images.drawer.OvalDrawer;
 import images.drawer.RectDrawer;
-import images.ShapeDrawer;
 import images.drawer.TextDrawer;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 shapeDrawer = new RectDrawer(draw);
                 break;
             case R.id.circle:
-                shapeDrawer = new CircleDrawer(draw);
+                shapeDrawer = new CircleView(draw);
                 break;
             case R.id.oval:
                 shapeDrawer = new OvalDrawer(draw);
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * ÓÃÓÚ»­ÎÄ×Ö
+     * ç”¨äºŽç”»æ–‡å­—
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

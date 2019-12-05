@@ -5,95 +5,95 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 
 /**
- * ÓÃÓÚ´æ´¢ËùÓĞµÄ»æÍ¼ÊôĞÔ£¬µ¥ÀıÄ£Ê½
- * 
- * @author èºî£¿Æ¼¼£ºÀîÔŞºì
- * 
+ * ç”¨äºå­˜å‚¨æ‰€æœ‰çš„ç»˜å›¾å±æ€§ï¼Œå•ä¾‹æ¨¡å¼
+ *
+ * @author éŸ¬ç¿ç§‘æŠ€ï¼šæèµçº¢
+ *
  */
 public class AttributesTool {
-	/* »æÍ¼ÑÕÉ« */
-	private int color;
-	/* ÏßÌõµÄ¿í¶È */
-	private int borderWidth;
-	/* ÊÇ·ñÌî³ä£¬Ä¬ÈÏÊÇ¿ÕĞÄ */
-	private boolean fill;
-	
-	private static AttributesTool self;
-	
-	private static Paint paint;
-	
-	/**
-	 * ½«¹¹Ôì·½·¨¶¨Òå³ÉÎªË½ÓĞ£¬Ä¿µÄÎªÁË·ÀÖ¹´´½¨¶ÔÏó
-	 */
-	private AttributesTool() {
-		reset();
-	}
-	
-	/**
-	 * ÏòÍâ²¿Ìá¹©¶ÔÏó
-	 * @return
-	 */
-	public static AttributesTool getInstance(){
-		if(self == null){
-			self = new AttributesTool();
-		}
-		return self;
-	}
-	
-	/**
-	 * ½«µ±Ç°µÄ»æÍ¼ÊôĞÔ×ª»»³ÉPaint¶ÔÏó
-	 * @return
-	 */
-	public Paint getPaint(){
-		if(paint == null){
-			paint = new Paint();
-		}
-		
-		paint.setAntiAlias(true);
-		paint.setColor(this.color);
-		paint.setStrokeWidth(borderWidth);
-		
-		if(this.fill){
-			paint.setStyle(Style.FILL);
-		}else{
-			paint.setStyle(Style.STROKE);
-		}
-		paint.setTextSize(30);
-		
-		return paint;
-	}
-	
-	/**
-	 * ÖØÖÃ
-	 */
-	public void reset(){
-		this.color = Color.BLACK;
-		this.borderWidth = 1;
-		this.fill = false;
-	}
+    /* ç»˜å›¾é¢œè‰² */
+    private int color;
+    /* çº¿æ¡çš„å®½åº¦ */
+    private int borderWidth;
+    /* æ˜¯å¦å¡«å……ï¼Œé»˜è®¤æ˜¯ç©ºå¿ƒ */
+    private boolean fill;
 
-	public int getColor() {
-		return color;
-	}
+    private static AttributesTool self;
 
-	public void setColor(int color) {
-		this.color = color;
-	}
+    private static Paint paint;
 
-	public int getBorderWidth() {
-		return borderWidth;
-	}
+    /**
+     * å°†æ„é€ æ–¹æ³•å®šä¹‰æˆä¸ºç§æœ‰ï¼Œç›®çš„ä¸ºäº†é˜²æ­¢åˆ›å»ºå¯¹è±¡
+     */
+    private AttributesTool() {
+        reset();
+    }
 
-	public void setBorderWidth(int borderWidth) {
-		this.borderWidth = borderWidth;
-	}
+    /**
+     * å‘å¤–éƒ¨æä¾›å¯¹è±¡
+     * @return
+     */
+    public static AttributesTool getInstance(){
+        if(self == null){
+            self = new AttributesTool();
+        }
+        return self;
+    }
 
-	public boolean isFill() {
-		return fill;
-	}
+    /**
+     * å°†å½“å‰çš„ç»˜å›¾å±æ€§è½¬æ¢æˆPaintå¯¹è±¡
+     * @return
+     */
+    public Paint getPaint(){
+        if(paint == null){
+            paint = new Paint();
+        }
 
-	public void setFill(boolean fill) {
-		this.fill = fill;
-	}
+        paint.setAntiAlias(true);
+        paint.setColor(this.color);
+        paint.setStrokeWidth(borderWidth);
+
+        if(this.fill){
+            paint.setStyle(Style.FILL);
+        }else{
+            paint.setStyle(Style.STROKE);
+        }
+        paint.setTextSize(30);
+
+        return paint;
+    }
+
+    /**
+     * é‡ç½®
+     */
+    public void reset(){
+        this.color = Color.BLACK;
+        this.borderWidth = 1;
+        this.fill = false;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public int getBorderWidth() {
+        return borderWidth;
+    }
+
+    public void setBorderWidth(int borderWidth) {
+        this.borderWidth = borderWidth;
+    }
+
+    public boolean isFill() {
+        return fill;
+    }
+
+    public void setFill(boolean fill) {
+        this.fill = fill;
+    }
 
 }

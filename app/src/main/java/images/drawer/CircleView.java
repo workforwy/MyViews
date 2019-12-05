@@ -9,39 +9,32 @@ import images.AttributesTool;
 import images.BitmapBuffer;
 import images.ShapeDrawer;
 
-public class RectDrawer extends ShapeDrawer {
-    private float firstX;
-    private float firstY;
+public class CircleView extends ShapeDrawer {
+    private float centerX;
+    private float centerY;
     private float currentX;
     private float currentY;
 
-    public RectDrawer(View view) {
+    public CircleView(View view) {
         super(view);
     }
 
     @Override
     public void draw(Canvas viewCanvas) {
         super.draw(viewCanvas);
-        drawShape(viewCanvas, firstX, firstY, currentX, currentY);
+        drawCircle(viewCanvas);
     }
 
-    protected void drawShape(Canvas canvas, float firstX,
-                             float firstY, float currentX, float currentY){
+    /**
+     * 画圆
+     * @param viewCanvas
+     */
+    protected void drawCircle(Canvas viewCanvas) {
+        //计算半径
+        float r = (float) Math.sqrt(Math.pow(centerX - currentX, 2)
+                + Math.pow(centerY - currentY, 2));
         Paint paint = AttributesTool.getInstance().getPaint();
-
-        if(firstX < currentX && firstY < currentY){
-            //↘
-            canvas.drawRect(firstX, firstY, currentX, currentY, paint);
-        }else if(firstX > currentX && firstY > currentY){
-            //↖
-            canvas.drawRect(currentX, currentY, firstX, firstY, paint);
-        }else if(firstX > currentX && firstY < currentY){
-            //↙
-            canvas.drawRect(currentX, firstY, firstX, currentY, paint);
-        }else if(firstX < currentX && firstY > currentY){
-            //↗
-            canvas.drawRect(firstX, currentY, currentX, firstY, paint);
-        }
+        viewCanvas.drawCircle(centerX, centerY, Math.abs(r), paint);
     }
 
     @Override
@@ -51,8 +44,8 @@ public class RectDrawer extends ShapeDrawer {
 
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                firstX = x;
-                firstY = y;
+                centerX = currentX = x;
+                centerY = currentY = y;
                 break;
             case MotionEvent.ACTION_MOVE:
                 currentX = x;
@@ -61,11 +54,14 @@ public class RectDrawer extends ShapeDrawer {
                 break;
             case MotionEvent.ACTION_UP:
                 Canvas canvas = BitmapBuffer.getInstance().getCanvas();
-                drawShape(canvas, firstX, firstY, currentX, currentY);
+                drawCircle(canvas);
+                //画圆
                 getView().invalidate();
+                //保存到撤消栈中
                 BitmapBuffer.getInstance().pushBitmap();
                 break;
             default:
+
                 break;
         }
         return true;

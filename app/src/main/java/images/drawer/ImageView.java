@@ -7,59 +7,60 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import images.BitmapBuffer;
-import images.SystemParams;
 import images.ShapeDrawer;
+import images.SystemParams;
 
 /**
- * »æÍ¼Çø
- * @author èºî£¿Æ¼¼£ºÀîÔŞºì
+ * ç»˜å›¾åŒº
  *
+ * @author éŸ¬ç¿ç§‘æŠ€ï¼šæèµçº¢
  */
 public class ImageView extends View {
-	private ShapeDrawer shapeDrawer;//Í¼ĞÎ»æÖÆÆ÷
-	
-	public void setShapeDrawer(ShapeDrawer shapeDrawer) {
-		this.shapeDrawer = shapeDrawer;
-	}
-	
-	@Override
-	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-		super.onSizeChanged(w, h, oldw, oldh);
-		SystemParams.areaWidth = this.getMeasuredWidth();
-		SystemParams.areaHeight = this.getMeasuredHeight();
-	}
-	
-	@Override
-	protected void onDraw(Canvas canvas) {
-		if(SystemParams.isRedo){
-			//³·Ïû
-			canvas.drawBitmap(BitmapBuffer.getInstance().getBitmap(),
-					0, 0, null);
-			SystemParams.isRedo = false;
-		}else{
-			shapeDrawer.draw(canvas);
-		}
-		//Âß¼­
-		shapeDrawer.logic();
-	}
-	
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		return shapeDrawer.onTouchEvent(event);
-	}
+    private ShapeDrawer shapeDrawer;//å›¾å½¢ç»˜åˆ¶å™¨
 
-	public ImageView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-	}
 
-	public ImageView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		//Ä¬ÈÏ»­ÏßÌõ 
-		shapeDrawer = new LineDrawer(this);
-	}
+    public void setShapeDrawer(ShapeDrawer shapeDrawer) {
+        this.shapeDrawer = shapeDrawer;
+    }
 
-	public ImageView(Context context) {
-		super(context);
-	}
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        SystemParams.areaWidth = this.getMeasuredWidth();
+        SystemParams.areaHeight = this.getMeasuredHeight();
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        if (SystemParams.isRedo) {
+            //æ’¤æ¶ˆ
+            canvas.drawBitmap(BitmapBuffer.getInstance().getBitmap(),
+                    0, 0, null);
+            SystemParams.isRedo = false;
+        } else {
+            shapeDrawer.draw(canvas);
+        }
+        //é€»è¾‘
+        shapeDrawer.logic();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return shapeDrawer.onTouchEvent(event);
+    }
+
+    public ImageView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+    }
+
+    public ImageView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        //é»˜è®¤ç”»çº¿æ¡
+        shapeDrawer = new LineDrawer(this);
+    }
+
+    public ImageView(Context context) {
+        super(context);
+    }
 
 }

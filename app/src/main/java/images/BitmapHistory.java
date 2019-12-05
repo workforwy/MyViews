@@ -5,66 +5,66 @@ import android.graphics.Bitmap;
 import java.util.Stack;
 
 /**
- * ³·Ïû
- * @author èºî£¿Æ¼¼£ºÀîÔŞºì
+ * æ’¤æ¶ˆ
+ * @author éŸ¬ç¿ç§‘æŠ€ï¼šæèµçº¢
  *
  */
 public class BitmapHistory {
-	private static Stack<Bitmap> stack;
-	private static BitmapHistory self;
-	
-	private BitmapHistory() {
-		if(stack == null){
-			stack = new Stack<Bitmap>();
-		}
-	}
-	
-	public static BitmapHistory getInstance(){
-		if(self == null){
-			self = new BitmapHistory();
-		}
-		return self;
-	}
-	
-	/**
-	 * ½«µ±Ç°µÄÀúÊ·»æÍ¼½á¹ûÑ¹Õ»
-	 * @param bitmap
-	 */
-	public void pushBitmap(Bitmap bitmap){
-		int count = stack.size();
-		if(count >= 6){
-			Bitmap bmp = stack.remove(0);
-			if(bmp!= null && !bmp.isRecycled()){
-				bmp.recycle();
-				System.gc();
-				bmp = null;
-			}
-		}
-		stack.push(bitmap);
-	}
-	
-	/**
-	 * ³·Ïû
-	 * @return
-	 */
-	public Bitmap reDo(){
-		Bitmap bmp = stack.pop();//½«¶¥²¿ÔªËØÉ¾³ı
-		//»ØÊÕÎ»Í¼×ÊÔ´
-		if(bmp!= null && !bmp.isRecycled()){
-			bmp.recycle();
-			System.gc();
-			bmp = null;
-		}
-		if(stack.empty()) return null;
-		//·µ»Ø³·ÏûºóµÄÎ»Í¼¶ÔÏó
-		return stack.peek();
-	}
-	
-	/**
-	 * ÅĞ¶ÏÊÇ·ñ»¹ÄÜ³·Ïû
-	 * @return true±íÊ¾¿ÉÒÔ³·Ïû£¬false±íÊ¾²»ÄÜ³·Ïû
-	 */
-	public boolean isReDo(){
-		return !stack.empty();
-	}
+    private static Stack<Bitmap> stack;
+    private static BitmapHistory self;
+
+    private BitmapHistory() {
+        if(stack == null){
+            stack = new Stack<Bitmap>();
+        }
+    }
+
+    public static BitmapHistory getInstance(){
+        if(self == null){
+            self = new BitmapHistory();
+        }
+        return self;
+    }
+
+    /**
+     * å°†å½“å‰çš„å†å²ç»˜å›¾ç»“æœå‹æ ˆ
+     * @param bitmap
+     */
+    public void pushBitmap(Bitmap bitmap){
+        int count = stack.size();
+        if(count >= 6){
+            Bitmap bmp = stack.remove(0);
+            if(bmp!= null && !bmp.isRecycled()){
+                bmp.recycle();
+                System.gc();
+                bmp = null;
+            }
+        }
+        stack.push(bitmap);
+    }
+
+    /**
+     * æ’¤æ¶ˆ
+     * @return
+     */
+    public Bitmap reDo(){
+        Bitmap bmp = stack.pop();//å°†é¡¶éƒ¨å…ƒç´ åˆ é™¤
+        //å›æ”¶ä½å›¾èµ„æº
+        if(bmp!= null && !bmp.isRecycled()){
+            bmp.recycle();
+            System.gc();
+            bmp = null;
+        }
+        if(stack.empty()) return null;
+        //è¿”å›æ’¤æ¶ˆåçš„ä½å›¾å¯¹è±¡
+        return stack.peek();
+    }
+
+    /**
+     * åˆ¤æ–­æ˜¯å¦è¿˜èƒ½æ’¤æ¶ˆ
+     * @return trueè¡¨ç¤ºå¯ä»¥æ’¤æ¶ˆï¼Œfalseè¡¨ç¤ºä¸èƒ½æ’¤æ¶ˆ
+     */
+    public boolean isReDo(){
+        return !stack.empty();
+    }
 }
