@@ -1,11 +1,9 @@
-package images;
+package views;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.view.View;
-
-import images.BitmapBuffer;
 
 /**
  * 图形绘制器

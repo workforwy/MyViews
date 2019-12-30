@@ -1,4 +1,4 @@
-package images.drawer;
+package views.drawer;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,9 +6,9 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import images.BitmapBuffer;
-import images.ShapeDrawer;
-import images.SystemParams;
+import views.BitmapBuffer;
+import views.ShapeDrawer;
+import views.SystemParams;
 
 /**
  * 绘图区

@@ -7,10 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import images.drawer.BallMoveView;
-import images.drawer.ClipView;
-import images.drawer.CoordinateView;
-import images.drawer.WatchView;
+import views.drawer.BallMoveView;
+import views.drawer.ClipView;
+import views.drawer.CoordinateView;
+import views.drawer.WatchView;
 
 public class GIFActivity extends AppCompatActivity {
 

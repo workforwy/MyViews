@@ -4,22 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <images.drawer.ClipView
+    <views.drawer.ClipView
         android:id="@+id/clipview"
         android:layout_width="100dp"
         android:layout_height="100dp" />
 
-    <images.drawer.BallMoveView
+    <views.drawer.BallMoveView
         android:id="@+id/ball"
         android:layout_width="match_parent"
         android:layout_height="100dp" />
 
-    <images.drawer.CoordinateView
+    <views.drawer.CoordinateView
         android:id="@+id/coord"
         android:layout_width="match_parent"
         android:layout_height="100dp" />
 
-    <images.drawer.WatchView
+    <views.drawer.WatchView
         android:id="@+id/watch"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

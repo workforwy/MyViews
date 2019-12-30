@@ -1,13 +1,13 @@
-package images.drawer;
+package views.drawer;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.View;
 
-import images.AttributesTool;
-import images.BitmapBuffer;
-import images.ShapeDrawer;
+import views.AttributesTool;
+import views.BitmapBuffer;
+import views.ShapeDrawer;
 
 public class TextDrawer extends ShapeDrawer {
 	private String text;

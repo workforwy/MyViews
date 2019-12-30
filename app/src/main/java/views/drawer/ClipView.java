@@ -1,4 +1,4 @@
-package images.drawer;
+package views.drawer;
 
 import android.content.Context;
 import android.graphics.Bitmap;

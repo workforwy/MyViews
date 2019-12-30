@@ -1,4 +1,4 @@
-package images;
+package views;
 
 /**
  * 系统参数

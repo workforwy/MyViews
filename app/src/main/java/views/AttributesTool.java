@@ -1,4 +1,4 @@
-package images;
+package views;
 
 import android.graphics.Color;
 import android.graphics.Paint;

@@ -8,16 +8,16 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import images.AttributesTool;
-import images.BitmapBuffer;
-import images.ShapeDrawer;
-import images.SystemParams;
-import images.drawer.CircleView;
-import images.drawer.ImageView;
-import images.drawer.LineDrawer;
-import images.drawer.OvalDrawer;
-import images.drawer.RectDrawer;
-import images.drawer.TextDrawer;
+import views.AttributesTool;
+import views.BitmapBuffer;
+import views.ShapeDrawer;
+import views.SystemParams;
+import views.drawer.CircleView;
+import views.drawer.ImageView;
+import views.drawer.LineDrawer;
+import views.drawer.OvalDrawer;
+import views.drawer.RectDrawer;
+import views.drawer.TextDrawer;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView draw;

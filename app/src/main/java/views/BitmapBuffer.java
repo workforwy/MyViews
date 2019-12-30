@@ -1,4 +1,4 @@
-package images;
+package views;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
