@@ -19,7 +19,6 @@ public class GIFActivity extends AppCompatActivity {
     private BallMoveView mBallMoveView;
     private CoordinateView mCoordinateView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
